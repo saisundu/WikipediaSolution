@@ -8,7 +8,6 @@ import java.util.Map;
 
 
 /**
- *
  * WikipediaAnswerMatcherImpl.java
  * Implementation Public Interface WikipediaAnswerMatcher for Wikipedia Answer Matching Problem.
  * Implements the methods required to use the Wikipedia Answer Matcher Implementation
@@ -28,14 +27,16 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
     private Map<String, String> mapOfQuestionsWithMatchingAnswers = new HashMap<String, String> ();
     private Map<String, String> mapOfQuestionsWithSentences = new HashMap<String, String> ();
     private Map<String, String[]> mapOfSentensesWithMatchingAnswers = new HashMap<String, String[]> ();
+
     /**
      * Checks the input text for conformance to the input guidelines. Parses the string to derive the required output.
+     *
      * @param textInput the String containing the main text in the first sentence followed by 5 questions in each line and the jumbled answers delimited by ";"
      * @return <tt>WikipediaAnswerMatcher</tt> if the input String is a valid string in the required format
      * @throws WikipediaAnswerMatcherException if the <tt>textInput</tt> is invalid
      */
     private void checkAndParseInput(String textInput) throws WikipediaAnswerMatcherException {
-        if( textInput.length () > INPUT_LENGTH_UPPER_LIMIT){
+        if ( textInput.length () > INPUT_LENGTH_UPPER_LIMIT ) {
             throw new WikipediaAnswerMatcherException ( "Input text length restricted to 5000 characters" );
         }
         if ( textInput == "" || textInput == null ) {
@@ -44,24 +45,29 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
         this.textInput = textInput;
         parseInputText ();
     }
+
     /**
      * Constructor implementation with textInput. Calls method checkAndParseInput internally.
+     *
      * @param textInput the String containing the main text in the first sentence followed by 5 questions in each line and the jumbled answers delimited by ";"
      * @throws WikipediaAnswerMatcherException if the <tt>textInput</tt> is invalid
      */
-    WikipediaAnswerMatcherImpl(String textInput)throws WikipediaAnswerMatcherException {
+    WikipediaAnswerMatcherImpl(String textInput) throws WikipediaAnswerMatcherException {
         checkAndParseInput ( textInput );
 
     }
+
     /**
      * Default Constructor implementation .
      */
-    WikipediaAnswerMatcherImpl(){
+    WikipediaAnswerMatcherImpl() {
 
     }
+
     /**
      * Implementation of method setInputText
      * Sets the input text on an existing instance of WikipediaAnswerMatcher.
+     *
      * @param textInput the String containing the main text in the first sentence followed by 5 questions in each line and the jumbled answers delimited by ";"
      * @throws WikipediaAnswerMatcherException if the <tt>inputText</tt> is invalid
      */
@@ -69,8 +75,10 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
         checkAndParseInput ( textInput );
 
     }
+
     /**
      * Parses the input text and prepares the internal state .
+     *
      * @throws WikipediaAnswerMatcherException if the <tt>inputText</tt> is invalid
      */
     private void parseInputText() throws WikipediaAnswerMatcherException {
@@ -97,6 +105,7 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
 
 
     }
+
     /**
      * Iterates through the list of main text sentences and maps them to one or more answers which are contained in the main text sentence
      */
@@ -127,15 +136,16 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
     }
 
     /**
-     *Checks if the answer list provided contains valid answers which are sub strings of the main text sentences
+     * Checks if the answer list provided contains valid answers which are sub strings of the main text sentences
      */
     private void checkInputContainsValidAnswers() throws WikipediaAnswerMatcherException {
         if ( jumbledAnswers == null || jumbledAnswers.length < EXPECTED_INPUT_ANSWERS ) {
             throw new WikipediaAnswerMatcherException ( "There must be five answers deleimited by ;" );
         }
     }
+
     /**
-     *Checks if the answer list provided contains valid questions.
+     * Checks if the answer list provided contains valid questions.
      */
     private void checkInputContainsValidQuestions(String[] lines) throws WikipediaAnswerMatcherException {
         for (int i = 1; i <= 5; i++) {
@@ -147,20 +157,20 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
             }
         }
     }
+
     /**
-     *Checks if the input text contains exactly 7 lines.
+     * Checks if the input text contains exactly 7 lines.
      */
     private void checkInputIsOfCorrectLength(String[] lines) throws WikipediaAnswerMatcherException {
-        if ( lines.length == 0 ) {
-            throw new WikipediaAnswerMatcherException ( "Input text cannot be empty" );
-        } else {
-            if ( lines.length != INPUT_LINES ) {
-                throw new WikipediaAnswerMatcherException ( "Input text must contain 7 lines" );
-            }
+
+        if ( lines.length != INPUT_LINES ) {
+            throw new WikipediaAnswerMatcherException ( "Input text must contain 7 lines" );
         }
+
     }
+
     /**
-     *Checks that each of the question string is a valid question.
+     * Checks that each of the question string is a valid question.
      */
     private boolean isValidQuestion(String questionString) {
 
@@ -170,7 +180,7 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
 
 
     public String getOrderedAnswers() throws WikipediaAnswerMatcherException {
-        if(textInput != null) {
+        if ( textInput != null ) {
             StringBuffer delimitedListOfOutputAnswers = new StringBuffer ();
             for (String inputQuestion : listOfInputQuestions
                     ) {
@@ -181,9 +191,9 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
                 delimitedListOfOutputAnswers.append ( mapOfQuestionsWithMatchingAnswers.get ( inputQuestion ) );
 
             }
-            return delimitedListOfOutputAnswers.toString();
-        }else{
-            throw new WikipediaAnswerMatcherException("Input text has not been set");
+            return delimitedListOfOutputAnswers.toString ();
+        } else {
+            throw new WikipediaAnswerMatcherException ( "Input text has not been set" );
         }
 
     }
@@ -234,9 +244,7 @@ public class WikipediaAnswerMatcherImpl implements WikipediaAnswerMatcher {
 
         if ( questionPart.length () != 0 ) {
             for (int i = 0; i < mainTextSentences.length; i++) {
-                // System.out.println("Searching for " + "++" + pattern + "++in " + "==>" + mainTextSentences[i]);
                 if ( mainTextSentences[i].toLowerCase ().contains ( questionPart.toLowerCase () ) ) {
-                    // System.out.println("1 found " + pattern + "as substring of " + mainTextSentences[i]);
                     return mainTextSentences[i];
                 }
             }

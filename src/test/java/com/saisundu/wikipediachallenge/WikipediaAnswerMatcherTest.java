@@ -213,6 +213,54 @@ public class WikipediaAnswerMatcherTest {
             assertEquals ( "Input text length restricted to 5000 characters", excep.getMessage () );
         }
     }
+    @Test
+    public void testInputMustBeSetBeforeFetchingResults() throws Exception{
+        try{
+            WikipediaAnswerMatcher.getInstance ().getOrderedAnswers () ;
+        } catch (WikipediaAnswerMatcherException excep) {
+            assertEquals ( "Input text has not been set", excep.getMessage () );
+        }
+
+    }
+
+    @Test
+    public void testInputMustContain5ValidQuestions() throws Exception {
+        String wikipediaTest = wikipediaMainTextTestString;
+        wikipediaTest += "Which Zebras are endangered?\n";
+
+        wikipediaTest += "What is the aim of the Quagga Project?\n";
+
+        wikipediaTest += "Which animals are some of their closest relatives?\n";
+
+        wikipediaTest +=  "Which are the three species of zebras\n";
+
+        wikipediaTest +=  "Which subgenus do the plains zebra and the mountain zebra belong to\n";
+
+        wikipediaTest += "subgenus Hippotigris;the plains zebra, the Grévy's zebra and the mountain zebra;horses and donkeys;aims to breed zebras that are phenotypically similar to the quagga;Grévy's zebra and the mountain zebra";
+        System.out.println ( wikipediaTest );
+
+        String expectedOutput = "Grévy's zebra and the mountain zebra\n"
+                + "aims to breed zebras that are phenotypically similar to the quagga\n"
+                + "horses and donkeys\n"
+                + "the plains zebra, the Grévy's zebra and the mountain zebra\n"
+                + "subgenus Hippotigris";
+
+        try {
+            WikipediaAnswerMatcher.getInstance ( wikipediaTest );
+        } catch (WikipediaAnswerMatcherException excep) {
+            assertEquals ( "Input text must contain 5 lines of questions", excep.getMessage () );
+        }
+    }
+
+    @Test
+    public void testInputCannotBeEmpty() throws Exception {
+
+        try {
+            WikipediaAnswerMatcher.getInstance ( "" );
+        } catch (WikipediaAnswerMatcherException excep) {
+            assertEquals ( "Input text cannot be empty", excep.getMessage () );
+        }
+    }
 
 
 }
