@@ -138,6 +138,11 @@ Please have a look at the Unit Tests and the below code snippet to get started w
             
     WikipediaAnswerMatcher.getInstance ( wikipediaMainTextTestString + questionsTestList + semicolonDelimitedInputAnswersTestList ).getOrderedAnswers ();
 '
+# Further Work & Missing Functionality
+The current implementation uses a simple string matching mechanism to match the questions to answers. 
+It relies on the assumption that parts of questions derived by
+repeatedly removing the first word in the question will match atleast one of the sentences in the main string. 
+This obviously results in a restriction as there is no fuzzy matching applied to match the questions to answers. 
 
 # Tests
 Most of the implementation has been done using the Test Driven Development approach and hence covers 100% of the implemented functionality. 
