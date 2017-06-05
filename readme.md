@@ -94,3 +94,8 @@ specific order. Your task is to identify, which answer corresponds to which ques
  the plains zebra, the Grévy's zebra and the mountain zebra
  
  subgenus Hippotigris
+ 
+# Design
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+ 
