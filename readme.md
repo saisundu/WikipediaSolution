@@ -98,4 +98,13 @@ specific order. Your task is to identify, which answer corresponds to which ques
 # Design
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/Design.jpg "Design")
 
+# API
+
+# Tests
+## Test Cases
+![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/testCoverageResults/UnitTests.jpg "Test Cases")
+
+## Test Case Code Coverage
+![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/testCoverageResults/UnitTestsCoverage.jpg "Test Cases Code Coverage")
+
  
