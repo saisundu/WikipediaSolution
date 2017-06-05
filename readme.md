@@ -114,8 +114,9 @@ The API provides a simple interface to get an instance of the Wikipedia Answer M
 The API also provides a method to get the desired output(ordered answers) with the method getOrderedAnswers().
 Please have a look at the Unit Tests and the below code snippet to get started with using the API.
 
-    private String wikipediaMainTextTestString = "Zebras are several species of African equids (horse family) united by their distinctive black and white stripes. " +
-            "Their stripes come in different patterns, unique to each individual. " +
+    private String wikipediaMainTextTestString = "Zebras are several species of African equids (horse family) united by"+
+    " their distinctive black and white stripes. " +
+    "Their stripes come in different patterns, unique to each individual. " +
             "They are generally social animals that live in small harems to large herds. " + "" +
             "Unlike their closest relatives, horses and donkeys, zebras have never been truly domesticated. " +
             "There are three species of zebras: the plains zebra, the Grévy's zebra and the mountain zebra. " +
