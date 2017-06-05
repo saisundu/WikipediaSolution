@@ -1,7 +1,7 @@
-package com.sahaj.wikipediachallenge;
+package com.saisundu.wikipediachallenge;
 
-import com.sahaj.wikipediachallenge.api.WikipediaAnswerMatcher;
-import com.sahaj.wikipediachallenge.exception.WikipediaAnswerMatcherException;
+import com.saisundu.wikipediachallenge.api.WikipediaAnswerMatcher;
+import com.saisundu.wikipediachallenge.exception.WikipediaAnswerMatcherException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

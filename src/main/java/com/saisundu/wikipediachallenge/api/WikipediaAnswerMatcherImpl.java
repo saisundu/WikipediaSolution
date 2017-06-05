@@ -1,8 +1,7 @@
-package com.sahaj.wikipediachallenge.api;
+package com.saisundu.wikipediachallenge.api;
 
 
-import com.sahaj.wikipediachallenge.api.WikipediaAnswerMatcher;
-import com.sahaj.wikipediachallenge.exception.WikipediaAnswerMatcherException;
+import com.saisundu.wikipediachallenge.exception.WikipediaAnswerMatcherException;
 
 import java.util.HashMap;
 import java.util.Map;

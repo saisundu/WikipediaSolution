@@ -1,4 +1,4 @@
-package com.sahaj.wikipediachallenge.exception;
+package com.saisundu.wikipediachallenge.exception;
 
 /**
  * Created by i033118 on 6/4/17.
