@@ -99,6 +99,9 @@ specific order. Your task is to identify, which answer corresponds to which ques
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/Design.jpg "Design")
 
 # API
+The API provides a simple interface to get an instance of the Wikipedia Answer Matcher to which the input text can be set .
+The API also provides a method to get the desired output(ordered answers) with the method getOrderedAnswers().
+Please have a look at the Unit Tests and the below code snippet to get started with using the API.
 
     private String wikipediaMainTextTestString = "Zebras are several species of African equids (horse family) united by their distinctive black and white stripes. " +
             "Their stripes come in different patterns, unique to each individual. " +
@@ -133,10 +136,12 @@ specific order. Your task is to identify, which answer corresponds to which ques
             "the plains zebra, the Grévy's zebra and the mountain zebra"+outputListDelimiter +
             "subgenus Hippotigris";
             
-    WikipediaAnswerMatcher.getInstance ( wikipediaMainTextTestString + questionsTestList + semicolonDelimitedInputAnswersTestList ).getOrderedAnswers () );
+    WikipediaAnswerMatcher.getInstance ( wikipediaMainTextTestString + questionsTestList + semicolonDelimitedInputAnswersTestList ).getOrderedAnswers ();
 '
 
 # Tests
+Most of the implementation has been done using the Test Driven Development approach and hence covers 100% of the implemented functionality. 
+Please refer to the unit tests for set of covered test scenarios.
 ## Test Cases
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/testCoverageResults/UnitTests.jpg "Test Cases")
 
