@@ -99,8 +99,8 @@ specific order. Your task is to identify, which answer corresponds to which ques
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/Design.jpg "Design")
 
 # API
-'
-    private String outputListDelimiter = "\n";
+ '
+
     private String wikipediaMainTextTestString = "Zebras are several species of African equids (horse family) united by their distinctive black and white stripes. " +
             "Their stripes come in different patterns, unique to each individual. " +
             "They are generally social animals that live in small harems to large herds. " + "" +
@@ -115,6 +115,7 @@ specific order. Your task is to identify, which answer corresponds to which ques
             "While plains zebras are much more plentiful, one subspecies, the quagga, became extinct in the late 19th century – " +
             "though there is currently a plan, called the Quagga Project, that aims to breed zebras that are phenotypically similar to the quagga in a process called breeding back.\n";
 
+    private String outputListDelimiter = "\n";
     private String questionsTestList = "Which Zebras are endangered?\n" +
             "What is the aim of the Quagga Project?\n" +
             "Which animals are some of their closest relatives?\n" +
@@ -134,9 +135,6 @@ specific order. Your task is to identify, which answer corresponds to which ques
             "subgenus Hippotigris";
             
     WikipediaAnswerMatcher.getInstance ( wikipediaMainTextTestString + questionsTestList + semicolonDelimitedInputAnswersTestList ).getOrderedAnswers () );
-            
-            
-            
 '
 
 # Tests
