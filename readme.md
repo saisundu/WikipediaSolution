@@ -99,7 +99,6 @@ specific order. Your task is to identify, which answer corresponds to which ques
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/Design.jpg "Design")
 
 # API
- '
 
     private String wikipediaMainTextTestString = "Zebras are several species of African equids (horse family) united by their distinctive black and white stripes. " +
             "Their stripes come in different patterns, unique to each individual. " +
