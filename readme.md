@@ -145,7 +145,7 @@ repeatedly removing the first word in the question will match atleast one of the
 This obviously results in a restriction as there is no fuzzy matching applied to match the questions to answers. 
 
 # Tests
-Most of the implementation has been done using the Test Driven Development approach and hence covers 100% of the implemented functionality. 
+Most of the implementation has been done using the Test Driven Development approach and hence the tests cover ~100% of the implemented functionality. 
 Please refer to the unit tests for set of covered test scenarios.
 ## Test Cases
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/testCoverageResults/UnitTests.jpg "Test Cases")
