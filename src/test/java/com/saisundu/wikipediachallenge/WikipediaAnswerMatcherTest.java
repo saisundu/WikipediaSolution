@@ -112,7 +112,6 @@ public class WikipediaAnswerMatcherTest {
         // wikipediaTest +=  "Which subgenus do the plains zebra and the mountain zebra belong to?\n";
 
         wikipediaTest += "subgenus Hippotigris;the plains zebra, the Grévy's zebra and the mountain zebra;horses and donkeys;aims to breed zebras that are phenotypically similar to the quagga;Grévy's zebra and the mountain zebra";
-        System.out.println ( wikipediaTest );
 
         String expectedOutput = "Grévy's zebra and the mountain zebra\n"
                 + "aims to breed zebras that are phenotypically similar to the quagga\n"
@@ -237,7 +236,6 @@ public class WikipediaAnswerMatcherTest {
         wikipediaTest +=  "Which subgenus do the plains zebra and the mountain zebra belong to\n";
 
         wikipediaTest += "subgenus Hippotigris;the plains zebra, the Grévy's zebra and the mountain zebra;horses and donkeys;aims to breed zebras that are phenotypically similar to the quagga;Grévy's zebra and the mountain zebra";
-        System.out.println ( wikipediaTest );
 
         String expectedOutput = "Grévy's zebra and the mountain zebra\n"
                 + "aims to breed zebras that are phenotypically similar to the quagga\n"

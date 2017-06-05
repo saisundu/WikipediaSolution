@@ -98,6 +98,17 @@ specific order. Your task is to identify, which answer corresponds to which ques
 # Design
 ![alt text](https://github.com/saisundu/WikipediaSolution/blob/master/Design.jpg "Design")
 
+# Building And Running The Solution
+The solution can be built and unit tests executed using the following maven commands.
+
+Note: One of the 12 test cases if failing due to a limitation in the current implementation.
+## Build
+`mvn clean install`
+## Run Tests
+`mvn clean install`
+
+
+
 # API
 The API provides a simple interface to get an instance of the Wikipedia Answer Matcher to which the input text can be set .
 The API also provides a method to get the desired output(ordered answers) with the method getOrderedAnswers().
@@ -138,6 +149,7 @@ Please have a look at the Unit Tests and the below code snippet to get started w
             
     WikipediaAnswerMatcher.getInstance ( wikipediaMainTextTestString + questionsTestList + semicolonDelimitedInputAnswersTestList ).getOrderedAnswers ();
 '
+
 # Further Work & Missing Functionality
 The current implementation uses a simple string matching mechanism to match the questions to answers. 
 It relies on the assumption that parts of questions derived by
